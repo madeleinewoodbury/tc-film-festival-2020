@@ -1,38 +1,542 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Global Styles */
+:root {
+  --primary-color: #1599bd;
+  --secondary-color: #6ac3e7;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: white;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--light-color);
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  z-index: 100;
+  width: 100%;
+  border-bottom: solid 2px var(--primary-color);
+  background-color: #fff;
+  opacity: 0.9;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar .logo img {
+  width: 200px;
+  padding-top: 0.25rem;
+}
+
+.navbar .logo img:hover {
+  opacity: 0.8;
+}
+
+.navbar a {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+}
+
+.navbar a:hover {
+  color: var(--secondary-color);
+}
+
+.navbar a.active {
+  color: var(--secondary-color);
+}
+
+/* Landing */
+.background {
+  background: url('./img/tc-background-6.jpg') center center/cover fixed;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.landing-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.landing-content .hero {
+  color: white;
   text-align: center;
+  font-size: 1.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.landing-content .hero .title {
+  font-size: 3.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.landing-content .hero .btn {
+  margin: 1rem 0 0 0;
+  padding: 0.4rem 1.2rem;
+  font-size: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Schedule */
+.schedule {
+  margin-top: 1rem;
+}
+
+.schedule h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.schedule .films {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.schedule .scheduled-film {
+  margin: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 4px solid var(--secondary-color);
+  border-radius: 5px;
+  background-color: var(--light-color);
+  padding: 0.75rem;
+}
+
+.schedule .scheduled-film h2 {
+  font-size: 1.8rem;
+}
+
+.schedule .scheduled-film .film {
+  display: flex;
+  width: 80%;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
+}
+
+.schedule .scheduled-film .film .info h3 {
+  font-size: 1.5rem;
+}
+
+/* Films */
+.films-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.film {
+  display: flex;
+  width: 350px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.film .img-container {
+  width: 150px;
+  margin-right: 1rem;
+}
+
+.film .poster {
+  width: 100%;
+}
+
+.film .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+form {
+  display: flex;
+  justify-content: flex-end;
+}
+
+form .form-group {
+  margin: 1.2rem 0.5rem 0.75rem 0.5rem;
+}
+
+form .form-group select {
+  display: block;
+  padding: 0.4rem 0.5rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Showcase */
+.showcase {
+  margin-top: 0.5rem;
+}
+
+.showcase h1 {
+  font-size: 2.5rem;
+}
+
+.showcase .info span {
+  margin-right: 1rem;
+  border-right: 1px solid grey;
+  padding-right: 1rem;
+}
+
+.showcase .info span:last-of-type {
+  border: none;
+}
+
+.showcase .content {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.showcase .content .poster img {
+  width: 70%;
+}
+
+.showcase .content .left {
+  width: 25%;
+}
+
+.showcase .content .right {
+  width: 75%;
+}
+
+.showcase .content .about {
+  margin-top: 1rem;
+  padding: 0 2rem;
+  font-size: 1.2rem;
+}
+
+.showcase .content .about .lead {
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+  font-weight: bolder;
+}
+
+.showcase .content .credits {
+  margin-top: 2rem;
+}
+
+.showcase .content .credits p {
+  font-size: 1.1rem;
+}
+
+.showcase .content .trailer {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 2rem 0;
 }
 
-.App-link {
-  color: #61dafb;
+.showcase .content .trailer iframe {
+  width: 700px;
+  height: 400px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1100px) {
+  .films-container {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+
+  .schedule .scheduled-film {
+    margin: 1rem;
+    padding: 0.2rem;
+  }
+
+  .schedule .scheduled-film h3 {
+    font-size: 1.5rem;
+  }
+
+  .schedule .scheduled-film .film {
+    margin-top: 1rem;
+  }
+
+  .schedule .scheduled-film .film .info h3 {
+    font-size: 1.3rem;
+  }
+
+  .showcase .content .about {
+    font-size: 1.1rem;
+  }
+
+  .showcase .content .about .lead {
+    font-size: 1.2rem;
+  }
+
+  .showcase .content .trailer iframe {
+    width: 600px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .schedule .films {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .showcase .content .credits p {
+    font-size: 1rem;
+  }
+  .showcase .content .trailer iframe {
+    width: 500px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 776px) {
+  .films-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .film,
+  .schedule .scheduled-film .film {
+    width: 400px;
+    padding: 0.5rem;
+  }
+
+  .film .img-container,
+  .schedule .scheduled-film .film .img-container {
+    margin-right: 2rem;
+  }
+
+  .film h3,
+  .schedule .scheduled-film .film h3 {
+    font-size: 1.5rem;
+  }
+
+  .film p,
+  .schedule .scheduled-film .film p {
+    font-size: 1.1rem;
+  }
+
+  form {
+    justify-content: center;
+  }
+
+  .showcase .content .poster img {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .showcase .content .left {
+    width: 20%;
+  }
+
+  .showcase .content .right {
+    width: 80%;
+  }
+
+  .showcase .content .credits p {
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .showcase h1 {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .showcase .info {
+    display: flex;
+    justify-content: center;
+  }
+  .showcase .content {
+    flex-direction: column;
+  }
+
+  .showcase .content .poster img {
+    width: 120px;
+    margin-right: 2rem;
+  }
+
+  .showcase .content .left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+
+  .showcase .content .credits p {
+    font-size: 1rem;
+  }
+
+  .showcase .content .right {
+    width: 100%;
+  }
+
+  .showcase .content .about {
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hide-sm {
+    display: none;
+  }
+
+  .navbar .logo img {
+    width: 100px;
+    padding-top: 0.2rem;
+  }
+
+  .navbar a {
+    font-size: 1.2rem;
+  }
+
+  .landing-content {
+    margin-top: 5rem;
+  }
+
+  .landing-content .hero {
+    font-size: 1.2rem;
+  }
+
+  .landing-content .hero .title {
+    font-size: 2.5rem;
+  }
+
+  .schedule .scheduled-film {
+    border: none;
+    background-color: white;
+  }
+
+  .film {
+    width: 300px;
+  }
+
+  .film .img-container {
+    margin-right: 1.5rem;
+  }
+
+  .schedule .scheduled-film .film .info h3 {
+    font-size: 1.5rem;
+  }
+
+  .film h3,
+  .schedule .scheduled-film h3 {
+    font-size: 1.3rem;
+  }
+
+  form {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  form .form-group {
+    margin: 0.25rem 0;
+  }
+
+  form .form-group select {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .navbar {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .landing-content {
+    margin-top: 5rem;
+  }
+
+  .landing-content .hero {
+    font-size: 1.1rem;
+  }
+
+  .landing-content .hero .title {
+    font-size: 2.3rem;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .schedule {
+  }
+
+  .schedule .scheduled-film {
+    margin: 0 0 1rem 0;
+    padding: 0.25rem;
+  }
+
+  .schedule .scheduled-film h2 {
+    font-size: 1.6rem;
+  }
+
+  .schedule .scheduled-film .film {
+    width: 100%;
+  }
+
+  .schedule .scheduled-film .film .info h3 {
+    font-size: 1.4rem;
   }
 }
